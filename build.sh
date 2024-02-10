@@ -1,9 +1,9 @@
 #!/bin/bash
 
-buildah images &&
-buildah ps &&
-buildah pull nginx &&
-buildah tag nginx gangadhariy/tekton:v2 &&
+buildah images 
+buildah ps 
+buildah build -t pet .
+buildah tag pet gangadhariy/tekton:v2 &&
 buildah login docker.io -u gangadhariy -p gang@1112 &&
-buildah push nginx docker://docker.io/gangadhariy/nginx:latest &&
+buildah push gangadhariy/tekton:v2 docker://docker.io/gangadhariy/tekton:v2
 buildah push gangadhariy/tekton:v2
